@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daniel Sebastian Agaton Ramirez</title>
+    
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #ffffff;
+            line-height: 1.9;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 100px;
+            background-color: rgb(116, 1, 45);
+        }
+        hr {
+            border: 0;
+            height: 20px;
+            background: linear-gradient(to right, transparent, rgb(146, 255, 169), transparent);
+            margin: 30px 0;
+        }
+        header {
+            text-align: center;
+            background-color: rgba(168, 3, 3, 0.925);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+        header img {
+            border: 4px solid aquamarine;
+            border-radius: 100%;
+            object-fit: cover;
+            margin: 20px 0;
+        }
+        .contenedor-multimedia {
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            border-radius: 12px;
+        }
+        video {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        }
+        audio {
+            width: 100%;
+            max-width: 500px;
+            margin-top: 10px;
+        }
+        ol {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 25px 20px 25px 50px;
+            border-radius: 12px;
+        }
+        ol li {
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+        }
+        a {
+            color: aquamarine;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        a:hover {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: #2c3e50 !important;
+            color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        table tr:first-child {
+            background-color: #1a252f;
+            font-weight: bold;
+            color: aquamarine;
+        }
+        form {
+            background-color: #ffffff;
+            color: #333333;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+        }
+        form p {
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #2c3e50;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 2px solid #bdc3c7;
+            border-radius: 6px;
+            box-sizing: border-box;
+        }
+        input[type="radio"] {
+            margin-right: 5px;
+            margin-bottom: 15px;
+        }
+        input[type="submit"] {
+            background-color: rgb(151, 10, 10);
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+        }
+         #reloj-digital {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #000000;
+            color: aquamarine;
+            font-size: 30px;
+            text-align: center;
+            padding: 10px;
+            border-radius: 8px;
+            max-width: 200px;
+            margin: 20px auto;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            font-weight: bold;
+        }
+
+p {
+  font-size: 1rem;
+  font-family: sans-serif;
+  margin: 10px;
+}
+li {
+  list-style-type: numbers;
+}
+
+li li {
+  list-style-type: square;
+}
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1><u><span style="color:aquamarine">Daniel Sebastian Agaton Ramirez</span></u></h1>
+        <h2 style="color:rgb(197, 159, 248);">Mis gustos</h2>
+        
+        <img src="c:\Users\PC_01\Pictures\among us\IMG-20260918-WA0020.jpg" alt="daniel" width="200" height="200">
+        
+        <h3 style="color:rgb(0, 0, 0);"><u>Visión:</u> Es que esta página web tenga como una autobiografia y pues el logo significa todo lo que e aprendido en la secundaria</h3>
+        <h3 style="color:rgb(0, 0, 0);"><u>Misión:</u> Que se haga estudiar la forma de realizar un logo para una página web</h3>
+    </header>
+
+    <hr>
+    <div id="reloj-digital">5:03</div>
+    <script>
+        function actualizarReloj() {
+            const fecha = new Date();
+            let horas = fecha.getHours();
+            let minutos = fecha.getMinutes();
+            let segundos = fecha.getSeconds();
+
+            // Esto añade un cero a la izquierda si el número es menor a 10
+            horas = horas < 10 ? "0" + horas : horas;
+            minutos = minutos < 10 ? "0" + minutos : minutos;
+            segundos = segundos < 10 ? "0" + segundos : segundos;
+
+            // Inserta la hora en la etiqueta HTML
+            document.getElementById("reloj-digital").innerText = `${horas}:${minutos}:${segundos}`;
+        }
+
+        // Ejecuta la función cada segundo (1000 milisegundos)
+        setInterval(actualizarReloj, 1000);
+        
+        // Ejecuta la función inmediatamente al cargar la página
+        actualizarReloj();
+    </script>
+    <script>
+document.addEventListener('click', (e) => {
+  for (let i = 0; i < 5; i++) {
+    const estrella = document.createElement('div');
+    estrella.innerText = '★';
+    estrella.style.position = 'absolute';
+    estrella.style.left = `${e.pageX}px`;
+    estrella.style.top = `${e.pageY}px`;
+    estrella.style.color = '#ffeb3b';
+    estrella.style.fontSize = `${Math.random() * 20 + 15}px`;
+    estrella.style.pointerEvents = 'none';
+    estrella.style.transition = 'transform 1s ease-out, opacity 1s ease-out';
+    document.body.appendChild(estrella);
+
+    const despX = (Math.random() - 0.5) * 150;
+    const despY = (Math.random() * 120) + 60;
+
+    requestAnimationFrame(() => {
+      estrella.style.transform = `translate(${despX}px, ${despY}px) rotate(${Math.random() * 360}deg)`;
+      estrella.style.opacity = '0';
+    });
+    setTimeout(() => estrella.remove(), 1000);
+  }
+});
+// Lista de colores chidos (puedes cambiar los códigos HEX si quieres)
+const coloresFondo = [
+    "#74012d", // Tu color vino original
+    "#1a252f", // Azul oscuro estilo Among Us
+    "#0b3c5d", // Azul eléctrico
+    "#328cc1", // Azul claro
+    "#1d2731", // Gris oscuro espacial
+    "#3d1e6d"  // Morado Fortnite
+];
+
+let indiceColor = 0;
+
+// Escucha el clic en cualquier parte de la página
+document.addEventListener("click", (event) => {
+    // Evita cambiar el fondo si haces clic en un botón, enlace, video o imagen
+    if (event.target.tagName === "A" || event.target.tagName === "VIDEO" || 
+        event.target.tagName === "AUDIO" || event.target.tagName === "IMG") {
+        return;
+    }
+
+    // Pasa al siguiente color de la lista
+    indiceColor = (indiceColor + 1) % coloresFondo.length;
+    
+    // Aplica el nuevo color al fondo del body
+    document.body.style.backgroundColor = coloresFondo[indiceColor];
+});
+</script>
+    <hr>
+
+    <div class="contenedor-multimedia">
+        <video width="500" controls>
+            <source src="c:\Users\PC_01\Pictures\among us\VID-20261007-WA0006.mp4" type="video/mp4">
+            Tu navegador no soporta videos
+        </video>
+        <br><br>
+        <audio controls src="c:\Users\PC_01\Pictures\among us\AUD-20261011-WA0016.m4a"></audio>
+    </div>
+
+    <hr>
+
+    <ol>
+        <li style="color:beige; font-size: 14px; font-weight: bold;">Jugar</li> 
+        <li style="color:black; font-size: 16px; font-weight: bold;">Comer</li> 
+        <li style="color:aqua; font-size: 18px; font-weight: bold;">Escuchar musica</li> 
+        <li style="color:orange; font-size: 24px; font-weight: bold;">Comer azucar</li> 
+        <li style="color:blue; font-size: 32px; font-weight: bold;">Among us</li> 
+        <li style="color:yellow; font-size: 32px; font-weight: bold;">Fortnite</li> 
+        <li style="color:rebeccapurple; font-size: 24px; font-weight: bold;">Uvas</li> 
+        <li style="color:crimson; font-size: 18px; font-weight: bold;">Camaron empanisado</li> 
+        <li style="color:orchid; font-size: 18px; font-weight: bold;">Comida china</li> 
+        <li style="color:black; font-size: 18px; font-weight: bold;">Pizza</li> 
+        <li style="color:orange; font-size: 14px; font-weight: bold;">Hamburguesa</li> 
+        <li style="color:red; font-size: 14px; font-weight: bold;">Pollo</li> 
+        <li style="color:purple; font-size: 24px; font-weight: bold;">Arroz</li> 
+        <li style="color:pink; font-size: 18px; font-weight: bold;">Caldo de papa</li> 
+        <li style="color:white; font-size: 24px; font-weight: bold;">Pure de papa</li> 
+        <li style="color:red; font-size: 32px; font-weight: bold;">Agua de guayaba</li> 
+    </ol>
+
+    <h1><a href="file:///C:/Users/PC_01/Pictures/among%20us/pana.html" target="_blank">Mis gustos</a></h1>
+
+    
+    <hr>
+
+    <img src="c:\Users\PC_01\Pictures\among us\IMG-20261002-WA0019.jpg" alt="pal" width="200" height="200" style="display: block; margin: 0 auto;">
+    <img src="c:\Users\PC_01\Pictures\among us\IMG-20261002-WA0019.jpg" alt="gon" width="200" height="200" style="float: left;"> 
+    <img src="c:\Users\PC_01\Pictures\among us\IMG-20261002-WA0019.jpg" alt="paz" width="200" height="200" style="float: right; margin: 10px;">
+    <img src="c:\Users\PC_01\Pictures\among us\IMG-20261002-WA0019.jpg" alt="goku" width="200" height="200" style="display: block; clear: both; margin: 0 auto;"> 
+    
+    <hr>
+
+    <h2>Mis Amigos de la Secundaria</h2>
+    <table border="1">
+        <tr>
+            <td>Amigos</td>
+            <td>Secundaria</td>
+            <td>Foto</td>
+        </tr>
+        <tr>
+            <td>Levi</td>
+            <td>Mi mejor amigo</td>
+            <td><img src="c:\Users\PC_01\Pictures\among us\IMG-20261004-WA0007.jpg" alt="Levi" width="200" height="200"></td>
+        </tr>
+        <tr>
+            <td>Alexander</td>
+            <td>Amigo</td>
+            <td><img src="c:\Users\PC_01\Pictures\among us\IMG-20261007-WA0005.jpg" alt="Alexander" width="200" height="200"></td>
+        </tr>
+        <tr>
+            <td>Jesus</td>
+            <td>Amigo</td>
+            <td><img src="c:\Users\PC_01\Pictures\among us\IMG-20261004-WA0007.jpg" alt="Jesus" width="200" height="200"></td>
+        </tr>
+    </table>
+
+    <h2>Mis Amigos de la Infancia</h2>
+    <table border="1">
+        <tr>
+            <td>Amigos</td>
+            <td>Infancia</td>
+            <td>Foto</td>
+        </tr>
+        <tr>
+            <td>Angel antonio</td>
+            <td>Mi mejor amigo</td>
+            <td><img src="c:\Users\PC_01\Pictures\among us\IMG_20261007_163300.jpg" alt="Angel" width="200" height="200"></td>
+        </tr>
+        <tr>
+            <td>Lupita</td>
+            <td>Mejor amiga</td>
+            <td><img src="c:\Users\PC_01\Pictures\among us\IMG_20261007_163300.jpg" alt="Lupita" width="200" height="200"></td>
+        </tr>
+        <tr>
+            <td>Mario</td>
+            <td>Mejor amigo</td>
+            <td><img src="c:\Users\PC_01\Pictures\among us\IMG_20261007_163300.jpg" alt="Mario" width="200" height="200"></td>
+        </tr>
+        <tr>
+            <td>Miguel</td>
+            <td>Mejor amigo</td>
+            <td><img src="c:\Users\PC_01\Pictures\among us\IMG-20261012-WA0012.jpg" alt="Miguel" width="200" height="200"></td>
+        </tr>
+    </table>
+
+    <h2>Mis Amigos de la Preparatoria</h2>
+    <table border="1">
+        <tr>
+            <td>Amigos</td>
+            <td>Preparatoria</td>
+            <td>Foto</td>
+        </tr>
+        <tr>
+            <td>Alfredo</td>
+            <td>Mejor amigo</td>
+            <td><img src="c:\Users\PC_01\Pictures\among us\IMG-20261002-WA0021.jpg" alt="Alfredo" width="200" height="200"></td>
+        </tr>
+        <tr>
+            <td>Yaretzi</td>
+            <td>Mejor amiga</td>
+            <td><img src="c:\Users\PC_01\Pictures\among us\Screenshot_20261007_175319.jpg" alt="Yaretzi" width="200" height="200"></td>
+        </tr>
+        <tr>
+            <td>Francisco Gabriel</td>
+            <td>Mejor amigo</td>
+            <td><img src="c:\Users\PC_01\Pictures\among us\IMG-20260930-WA0022.jpg" alt="Francisco" width="200" height="200"></td>
+        </tr>
+        <tr>
+            <td>Miguel</td>
+            <td>Mejor amigo</td>
+            <td><img src="c:\Users\PC_01\Pictures\among us\IMG-20261012-WA0012.jpg" alt="Miguel" width="200" height="200"></td> 
+        </tr>
+    </table>
+
+    <br>
+    <hr>
+    <h1>formulario de la página web</h1>
+<form>
+    <p>1.¿Cuál es tu nombre?</p>
+    <input type="text" name="nombre"
+    required>
+    <p>2.¿Eres un estudiante?</p>
+    <input type="radio"
+    name="estudiante"value="si">si
+    <input type="radio"
+    name="estudiante"value="no">no
+    <p>3.¿Cuantos años tienes?</p>
+    <input type="text" name="edad"
+    required>
+    <p>4.¿que comes mas?</p>
+    <input type="radio"
+    name="comes"value="sopa">sopa
+    <input type="radio"
+    name="comes"value="huevo">huevo
+    <input type="radio"
+    name="comes"value="arroz">arroz
+    <input type="radio"
+    name="comes"value="mango">mango
+    <p>5.¿dinos tu fecha de nacimiento?</p>
+    <input type="text" name="nacimiento"
+    required>
+    <p>6.¿Eres mayor de edad?</p>
+    <input type="radio"
+    name="edad"value="si">si
+    <input type="radio"
+    name="edad"value="no">no
+    <p>7.¿Como te defines a ti mismo?</p>
+    <input type="text" name="ti mismo"
+    required>
+    <p>8.¿Con que genero te identificas?</p>
+    <input type="radio"
+    name="genero"value="hombre">hombre
+    <input type="radio"
+    name="genero"value="mujer">mujer
+    <input type="radio"
+    name="genero"value="gay">gay
+    <input type="radio"
+    name="genero"value="otro">otro
+    <p>9.¿Como eres con las demas personas?</p>
+    <input type="text" name="personas"
+    required>
+    <p>10.¿Eres bueno en lo que te gusta, programación?</p>
+    <input type="radio"
+    name="gusta"value="si">si
+    <input type="radio"
+    name="gusta"value="no">no
+    <p>11.¿Como defines a tus amigos?</p>
+    <input type="text" name="amigos"
+    required>
+    <p>12.¿Cuál es tu apodo?</p>
+    <input type="text" name="apodo"
+    required>
+    <p>.13¿Cuantas horas duermes?</p>
+    <input type="radio"
+    name="dormir"value="8">8
+    <input type="radio"
+    name="dormir"value="9">9
+    <input type="radio"
+    name="dormir"value="10">10
+    <input type="radio"
+    name="dormir"value="2">2
+    <p>14.¿Cuál es el nombre de tu abuela?</p>
+    <input type="text" name="nombre"
+    required>
+    <p>15.¿Cual es tu tipo de musica?</p>
+     <input type="text" name="musica"
+    required>
+    <p>16.¿Te gusta peso pluma?</p>
+    <input type="radio"
+    name="peso"value="si">si
+    <input type="radio"
+    name="peso"value="no">no
+    <p>17.¿Comó se llama tu mama?</p>
+    <input type="text" name="mama"
+    required>
+    <p>18.¿Comó se llama tu papa?</p>
+    <input type="text" name="papa"
+    required>
+    <p>19.¿Tienes hermanos?</p>
+    <input type="radio"
+    name="hermanos"value="si">si
+    <input type="radio"
+    name="hermanos"value="no">no
+     <p>20.¿Tienes mascotas?</p>
+    <input type="radio"
+    name="mascotas"value="si">si
+    <input type="radio"
+    name="mascotas"value="no">no
+    <p>21.¿Comes bien?</p>
+    <input type="radio"
+    name="bien"value="si">si
+    <input type="radio"
+    name="bien"value="no">no
+    <p>22.¿Dinos tu comida favorita?</p>
+    <input type="text" name="comida"
+    required>
+</form>
+<hr>
+<li><h1>Daniel Sebastian Agaton Ramirez</h1></li>
+<li><h1>Monica Pretelini y de Peña</h1></li>
+<li><h1>Monica Pretelini de Peña</h1></li>
+<li><h1>E.S.T.I.C 4.5</h1></li>
+<li><b><h1>CECYTEM Plantel Tezoyuca</h1></b></li>
+<li><h1>Axel,Raul,Levi,Juan,Alexander,Jesus,Yaretzi,Gabriel,Miguel,Francisco,Alain,Alfredo,Ernesto,Leandro,
+    Santiago,Moises,Christian,Emiliano,Ricardo,Mario,Jamil</h1></li>
+</nav>
+<section>
+<p id="nombre">Daniel Sebastian Agaton Ramirez</p>
+<p id="instagram">@Danielito_sigma_toilet</p>
+<p id="correo">aard101020hdfgmna7@soyceytem.mx</p>
+<script>
+    let caracteres = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    let password = "";
+    
+    // Elige 10 letras o números al azar
+    for (let i = 0; i < 10; i++) {
+        password += caracteres.charAt(Math.floor(Math.random() * caracteres.length));
+    }
+
+    // Te muestra la contraseña en la pantalla
+    alert("Tu contraseña es: " + password);
+</script>
+<script>// 1. Crear estilos para los copos desde JavaScript
+const estilo = document.createElement("style");
+estilo.innerHTML = `
+    .copo {
+        position: fixed;
+        top: -10px;
+        color: #fff;
+        font-size: 20px;
+        user-select: none;
+        pointer-events: none;
+        animation: caer 5s linear forwards;
+    }
+    @keyframes caer {
+        to {
+            transform: translateY(105vh);
+        }
+    }
+`;
+document.head.appendChild(estilo);
+
+// 2. Pintar el fondo oscuro para poder ver la nieve blanca
+document.body.style.backgroundColor = "#1a1a2e";
+
+// 3. Función de JavaScript que crea cada copo de nieve al azar
+function crearCopo() {
+    const copo = document.createElement("div");
+    copo.classList.add("copo");
+    copo.innerText = "❄";
+    
+    // Posición horizontal al azar
+    copo.style.left = Math.random() * 100 + "vw";
+    // Tamaño y velocidad al azar para que se vea más real
+    copo.style.fontSize = Math.random() * 15 + 10 + "px";
+    copo.style.animationDuration = Math.random() * 3 + 2 + "s";
+    
+    document.body.appendChild(copo);
+    
+    // Borrar el copo cuando salga de la pantalla para no trabar la página
+    setTimeout(() => { copo.remove(); }, 5000);
+}
+
+// 4. Hacer que caiga un copo nuevo cada 100 milisegundos
+setInterval(crearCopo, 100);</script>
